@@ -387,6 +387,7 @@ let contract = reactive({});
 const connectEthers = async () => {
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
+  console.log(signer);
   // 获取accounts
   privateInfo.value.accounts = await signer.getAddress();
   contract = new ethers.Contract("0x61B5C5334716626462f5e12836c51D7B9E08511E", abi, signer);
